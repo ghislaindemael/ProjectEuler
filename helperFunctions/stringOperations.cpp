@@ -4,6 +4,27 @@
 
 #include "stringOperations.h"
 
+bool isPandigitalFromOneToSize(const std::string &str) {
+    int length = str.length();
+    if (length < 1 || length > 9) {
+        return false;
+    }
+
+    std::set<char> seenDigits;
+
+    for (char c : str) {
+        if (c < '1' || c > '0' + length) {
+            return false;
+        }
+        if (seenDigits.contains(c)) {
+            return false;
+        }
+        seenDigits.insert(c);
+    }
+
+    return seenDigits.size() == length;
+}
+
 bool isUniquelyPandigital(const std::string& input) {
     if (input.length() != 9) {
         return false;
@@ -23,3 +44,4 @@ bool isUniquelyPandigital(const std::string& input) {
 
     return true;
 }
+

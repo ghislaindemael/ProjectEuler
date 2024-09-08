@@ -7,6 +7,7 @@
 #include <set>
 #include <string>
 
+bool isPandigitalFromOneToSize(const std::string &str);
 bool isUniquelyPandigital(const std::string& input);
 
 #endif //STRINGOPERATIONS_H
