@@ -9,8 +9,9 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <vector>
 
 std::set<std::string> parsePrimeSetFromFile(const std::string& filename);
-
+std::vector<std::string> parseWordArrayFromFile(const std::string &filename);
 
 #endif //FILEPARSING_H

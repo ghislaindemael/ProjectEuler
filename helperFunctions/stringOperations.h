@@ -7,7 +7,9 @@
 #include <set>
 #include <string>
 
+int getSumOfAlphabeticalIndexes(const std::string& str);
 bool isPandigitalFromOneToSize(const std::string &str);
 bool isUniquelyPandigital(const std::string& input);
+
 
 #endif //STRINGOPERATIONS_H

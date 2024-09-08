@@ -4,6 +4,18 @@
 
 #include "stringOperations.h"
 
+int getSumOfAlphabeticalIndexes(const std::string &str) {
+    int sum = 0;
+    for (char c : str) {
+        if (std::isupper(c)) {
+            sum += c - 'A' + 1;
+        } else if (std::islower(c)) {
+            sum += c - 'a' + 1;
+        }
+    }
+    return sum;
+}
+
 bool isPandigitalFromOneToSize(const std::string &str) {
     int length = str.length();
     if (length < 1 || length > 9) {
