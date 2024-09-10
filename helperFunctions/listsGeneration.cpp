@@ -27,3 +27,25 @@ std::set<int64_t> generateSetOfNFirstHexagonalNumbers(int limit) {
     }
     return hexagonalNumbers;
 }
+
+std::set<int64_t> generateSetOfNFirstPrimes(int limit) {
+    std::set<int64_t> primes;
+    std::vector<bool> isPrime(limit + 1, true);
+    isPrime[0] = isPrime[1] = false;
+
+    for (int p = 2; p <= sqrt(limit); ++p) {
+        if (isPrime[p]) {
+            for (int i = p * p; i <= limit; i += p) {
+                isPrime[i] = false;
+            }
+        }
+    }
+
+    for (int p = 2; p <= limit; ++p) {
+        if (isPrime[p]) {
+            primes.insert(p);
+        }
+    }
+
+    return primes;
+}
