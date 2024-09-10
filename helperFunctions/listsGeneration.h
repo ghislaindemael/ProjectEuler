@@ -7,5 +7,6 @@
 #include <set>
 
 std::set<int> generateSetOfNFirstTriangularNumbers(int n);
+std::set<int> generateSetOfNFirstPentagonalNumbers(int n);
 
 #endif //LISTSGENERATION_H
