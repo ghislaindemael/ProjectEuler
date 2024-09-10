@@ -28,7 +28,7 @@ std::set<int64_t> generateSetOfNFirstHexagonalNumbers(int limit) {
     return hexagonalNumbers;
 }
 
-std::set<int64_t> generateSetOfNFirstPrimes(int limit) {
+std::set<int64_t> generateSetOfPrimesUnderN(int limit) {
     std::set<int64_t> primes;
     std::vector<bool> isPrime(limit + 1, true);
     isPrime[0] = isPrime[1] = false;
