@@ -4,6 +4,32 @@
 
 #include "stringOperations.h"
 
+
+bool areNumbersPermutations(int int1, int int2) {
+    return areStringsPermutations(std::to_string(int1), std::to_string(int2));
+}
+
+bool areStringsPermutations(const std::string& s1, const std::string& s2) {
+    if (s1.length() != s2.length()) {
+        return false;
+    }
+
+    std::unordered_map<char, int> charCount;
+
+    for (char c : s1) {
+        charCount[c]++;
+    }
+
+    for (char c : s2) {
+        if (!charCount.contains(c) || charCount[c] == 0) {
+            return false;
+        }
+        charCount[c]--;
+    }
+
+    return true;
+}
+
 int getSumOfAlphabeticalIndexes(const std::string &str) {
     int sum = 0;
     for (char c : str) {
