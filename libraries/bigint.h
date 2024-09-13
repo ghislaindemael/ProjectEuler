@@ -98,7 +98,8 @@ class bigint {
         static std::string lcm(std::string, std::string);
         static std::string fact(std::string);
         static bool isPalindrome(std::string);
-        static bool isPrime(std::string);   
+        static bool isPrime(std::string);
+        static bigint bigFactorial(std::string);
 
 
     public: 
