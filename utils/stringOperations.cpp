@@ -4,6 +4,14 @@
 
 #include "stringOperations.h"
 
+#include <algorithm>
+
+
+bool isStringPalindrome(const std::string& str) {
+    std::string reversed = str;
+    std::ranges::reverse(reversed);
+    return str == reversed;
+}
 
 bool areNumbersPermutations(int int1, int int2) {
     return areStringsPermutations(std::to_string(int1), std::to_string(int2));
