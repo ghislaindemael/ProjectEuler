@@ -7,6 +7,14 @@
 #include <algorithm>
 
 
+int getSumOfDigits(const std::string &str) {
+    int sum = 0;
+    for(const char &c : str) {
+        sum += c - '0';
+    }
+    return sum;
+}
+
 bool isStringPalindrome(const std::string& str) {
     std::string reversed = str;
     std::ranges::reverse(reversed);

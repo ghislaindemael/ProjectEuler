@@ -8,6 +8,7 @@
 #include <string>
 #include <unordered_map>
 
+int getSumOfDigits(const std::string& str);
 bool isStringPalindrome(const std::string&);
 bool areNumbersPermutations(int, int);
 bool areStringsPermutations(const std::string& s1, const std::string& s2);
