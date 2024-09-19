@@ -13,6 +13,7 @@
 
 std::set<std::string> parsePrimeSetFromFile(const std::string& filename);
 std::vector<std::string> parsePrimeVectorFromFile(const std::string& filename);
+std::vector<int64_t> parsePrimeIntVectorFromFile(const std::string& filename);
 std::vector<std::string> parseWordArrayFromFile(const std::string &filename);
 
 #endif //FILEPARSING_H

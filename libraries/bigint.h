@@ -129,6 +129,10 @@ class bigint {
             return str;
         }
 
+        int getStringLength() const {
+            return str.length();
+        }
+
         // operator overloading for output stream {<<}
         friend std::ostream &operator << (std::ostream& stream, const bigint &n) {
             stream << n.str;
