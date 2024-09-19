@@ -4,6 +4,10 @@
 
 #include "listsGeneration.h"
 
+#include <iostream>
+#include <ostream>
+
+#include "primeFunctions.h"
 
 
 std::vector<std::vector<int>> generateCombinations(int n, int k) {
@@ -66,7 +70,7 @@ std::set<int64_t> generateSetOfPrimesUnderN(int limit) {
 
     for (int p = 2; p <= sqrt(limit); ++p) {
         if (isPrime[p]) {
-            for (int i = p * p; i <= limit; i += p) {
+            for (int i = p; i <= limit; i += p) {
                 isPrime[i] = false;
             }
         }
@@ -76,6 +80,47 @@ std::set<int64_t> generateSetOfPrimesUnderN(int limit) {
         if (isPrime[p]) {
             primes.insert(p);
         }
+    }
+
+    return primes;
+}
+
+std::set<int64_t> generatePrimeIntSetUsingSegmentedSieve(int limit) {
+
+    std::set<int64_t> primes {};
+
+    int sqrt_limit = static_cast<int>(sqrt(limit)) + 1;
+    std::vector<int> small_primes = simple_sieve(sqrt_limit);
+    for(const int i : small_primes) {
+        primes.insert(i);
+    }
+
+    int low = sqrt_limit;
+    int high = 2 * sqrt_limit;
+    while (low < limit) {
+        if (high > limit) {
+            high = limit;
+        }
+
+        std::vector<bool> sieve(high - low, true);
+        for (int prime : small_primes) {
+            int start = std::max(prime * prime, (low + prime - 1) / prime * prime);
+            if (start < low) {
+                start += prime;
+            }
+            for (int j = start; j < high; j += prime) {
+                sieve[j - low] = false;
+            }
+        }
+
+        for (int i = low; i < high; ++i) {
+            if (sieve[i - low]) {
+                primes.insert(i);
+            }
+        }
+
+        low += sqrt_limit;
+        high += sqrt_limit;
     }
 
     return primes;

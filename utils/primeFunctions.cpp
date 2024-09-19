@@ -4,6 +4,28 @@
 
 #include "primeFunctions.h"
 
+bool isPrime(int64_t n) {
+    if (n <= 1) {
+        return false;
+    }
+    if (n <= 3) {
+        return true;
+    }
+
+    if (n % 2 == 0 || n % 3 == 0) {
+        return false;
+    }
+
+    for (int i = 5; i <= floor(sqrt(n)) + 1; i += 6) {
+        if (n % i == 0 || n % (i + 2) == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
 std::vector<int> simple_sieve(int limit) {
     std::vector<bool> sieve(limit + 1, true);
     sieve[0] = sieve[1] = false;

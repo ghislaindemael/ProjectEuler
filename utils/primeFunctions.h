@@ -6,6 +6,7 @@
 #define PRIMEFUNCTIONS_H
 #include <vector>
 
+bool isPrime(int64_t n);
 std::vector<int> simple_sieve(int limit);
 void segmented_sieve(int limit);
 
