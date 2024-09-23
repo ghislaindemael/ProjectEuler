@@ -6,6 +6,7 @@
 #define LISTSGENERATION_H
 #include <functional>
 #include <set>
+#include <string>
 #include <vector>
 
 std::vector<std::vector<int> > generateCombinations(int n, int k);
@@ -21,5 +22,7 @@ std::set<int64_t> generateSetOfNFirstHexagonalNumbers(int n);
 std::set<int64_t> generateSetOfPrimesUnderN(int limit);
 
 std::set<int64_t> generatePrimeIntSetUsingSegmentedSieve(int limit);
+
+std::set<std::string> generateStringSetOfPrimesUnderN(int limit);
 
 #endif //LISTSGENERATION_H

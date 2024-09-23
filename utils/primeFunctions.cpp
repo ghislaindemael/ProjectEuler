@@ -4,7 +4,7 @@
 
 #include "primeFunctions.h"
 
-bool isPrime(int64_t n) {
+bool isPrime(const int64_t n) {
     if (n <= 1) {
         return false;
     }
@@ -16,7 +16,7 @@ bool isPrime(int64_t n) {
         return false;
     }
 
-    for (int i = 5; i <= floor(sqrt(n)) + 1; i += 6) {
+    for (int i = 5; i * i < n; i += 6) {
         if (n % i == 0 || n % (i + 2) == 0) {
             return false;
         }
