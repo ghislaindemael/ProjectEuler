@@ -6,10 +6,18 @@
 
 #include <algorithm>
 
+std::vector<char> getDigitsCharVector(const std::string& number) {
+    std::vector<char> digits;
+    for (char c: number) {
+        digits.push_back(c);
+    }
+    std::ranges::sort(digits);
+    return digits;
+}
 
-int getSumOfDigits(const std::string &str) {
+int getSumOfDigits(const std::string& str) {
     int sum = 0;
-    for(const char &c : str) {
+    for (const char& c: str) {
         sum += c - '0';
     }
     return sum;
@@ -32,11 +40,11 @@ bool areStringsPermutations(const std::string& s1, const std::string& s2) {
 
     std::unordered_map<char, int> charCount;
 
-    for (char c : s1) {
+    for (char c: s1) {
         charCount[c]++;
     }
 
-    for (char c : s2) {
+    for (char c: s2) {
         if (!charCount.contains(c) || charCount[c] == 0) {
             return false;
         }
@@ -46,9 +54,9 @@ bool areStringsPermutations(const std::string& s1, const std::string& s2) {
     return true;
 }
 
-int getSumOfAlphabeticalIndexes(const std::string &str) {
+int getSumOfAlphabeticalIndexes(const std::string& str) {
     int sum = 0;
-    for (char c : str) {
+    for (char c: str) {
         if (std::isupper(c)) {
             sum += c - 'A' + 1;
         } else if (std::islower(c)) {
@@ -58,7 +66,7 @@ int getSumOfAlphabeticalIndexes(const std::string &str) {
     return sum;
 }
 
-bool isPandigitalFromOneToSize(const std::string &str) {
+bool isPandigitalFromOneToSize(const std::string& str) {
     int length = str.length();
     if (length < 1 || length > 9) {
         return false;
@@ -66,7 +74,7 @@ bool isPandigitalFromOneToSize(const std::string &str) {
 
     std::set<char> seenDigits;
 
-    for (char c : str) {
+    for (char c: str) {
         if (c < '1' || c > '0' + length) {
             return false;
         }
@@ -86,7 +94,7 @@ bool isUniquelyPandigital(const std::string& input) {
 
     std::set<char> seenDigits;
 
-    for (char c : input) {
+    for (char c: input) {
         if (c < '1' || c > '9') {
             return false;
         }
@@ -98,4 +106,3 @@ bool isUniquelyPandigital(const std::string& input) {
 
     return true;
 }
-
