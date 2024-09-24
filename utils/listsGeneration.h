@@ -25,4 +25,16 @@ std::set<int64_t> generatePrimeIntSetUsingSegmentedSieve(int limit);
 
 std::set<std::string> generateStringSetOfPrimesUnderN(int limit);
 
+std::set<std::string> genTriangularNumbersStringSetBetween(int lower, int upper);
+
+std::set<std::string> genSquareNumbersStringSetOfBetween(int lower, int upper);
+
+std::set<std::string> genPentagonalNumbersStringSetBetween(int lower, int upper);
+
+std::set<std::string> genHexagonalNumbersStringSetBetween(int lower, int upper);
+
+std::set<std::string> genHeptagonalNumbersStringSetBetween(int lower, int upper);
+
+std::set<std::string> genOctagonalNumbersStringSetBetween(int lower, int upper);
+
 #endif //LISTSGENERATION_H
